@@ -36,6 +36,9 @@ def parse_command_line():
     return (options, args)
 
 
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
+
+
 if __name__ == '__main__':
 
     (options, args) = parse_command_line()
