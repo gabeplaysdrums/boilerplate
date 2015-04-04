@@ -48,6 +48,7 @@ def parse_command_line():
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 CATEGORIES = (
+    'git',
     'py',
     'web',
 )
@@ -78,8 +79,10 @@ def create_from_category(category, template, output_path):
 
 
 def create_from_filename(output_path):
-    ext = os.path.splitext(output_path)[1]
-    if ext == '.py':
+    ext = os.path.splitext(output_path)[1] or os.path.basename(output_path)
+    if ext == '.gitignore':
+        create_from_category('git', 'ignore', output_path)
+    elif ext == '.py':
         create_from_category('py', 'script', output_path)
     elif ext == '.css':
         create_from_category('web', 'stylesheet', output_path)
