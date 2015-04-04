@@ -81,6 +81,10 @@ def create_from_filename(output_path):
     ext = os.path.splitext(output_path)[1]
     if ext == '.py':
         create_from_category('py', 'script', output_path)
+    elif ext == '.css':
+        create_from_category('web', 'stylesheet', output_path)
+    elif ext == '.html':
+        create_from_category('web', 'page', output_path)
     elif ext == '.js':
         create_from_category('web', 'script', output_path)
     else:
