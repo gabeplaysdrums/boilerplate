@@ -79,16 +79,16 @@ def create_from_category(category, template, output_path):
 
 
 def create_from_filename(output_path):
-    ext = os.path.splitext(output_path)[1] or os.path.basename(output_path)
-    if ext == '.gitignore':
+    extension = os.path.splitext(output_path)[1] or os.path.basename(output_path)
+    if extension == '.gitignore':
         create_from_category('git', 'ignore', output_path)
-    elif ext == '.py':
+    elif extension == '.py':
         create_from_category('py', 'script', output_path)
-    elif ext == '.css':
+    elif extension == '.css':
         create_from_category('web', 'stylesheet', output_path)
-    elif ext == '.html':
+    elif extension == '.html':
         create_from_category('web', 'page', output_path)
-    elif ext == '.js':
+    elif extension == '.js':
         create_from_category('web', 'script', output_path)
     else:
         print 'could not deduce template from file extension'
