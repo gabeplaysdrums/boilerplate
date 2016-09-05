@@ -86,10 +86,12 @@ def create_from_filename(output_path):
         create_from_category('py', 'script', output_path)
     elif extension == '.css':
         create_from_category('web', 'stylesheet', output_path)
-    elif extension == '.html':
+    elif extension == '.htm' or extension == '.html':
         create_from_category('web', 'page', output_path)
     elif extension == '.js':
         create_from_category('web', 'script', output_path)
+    elif extension == '.bat' or extension == '.cmd':
+        create_from_category('bat', 'script', output_path)
     else:
         print 'could not deduce template from file extension'
         sys.exit(3)
